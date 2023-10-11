@@ -123,6 +123,7 @@ console.log(man4FullCopy)*/
 
 console.log(man5FullCopy.mother.parents[0])*/
 //-------------------------------------------------------
+/*
 let man6 = {
     name: 'John',
     age: 28,
@@ -156,4 +157,49 @@ let man6FullCopy = {...man6, mother: {...man6.mother, parents: man6.mother.paren
             {...p, favoriteDish: {...p.favoriteDish,title: "eggs"}} : p)
     }}
 
-console.log(man6FullCopy.mother.parents[1])
+console.log(man6FullCopy.mother.parents[1])*/
+//----------------------------------------------------------------------------------
+let man7 = {
+    name: 'John',
+    age: 28,
+    mother: {
+        name: "Kate",
+        age: 50,
+        work: {
+            position: "doctor",
+            experience: 15
+        },
+        parents: [
+            {
+                name: "Kevin",
+                age: 80,
+                favoriteDish: {
+                    title: "borscht",
+                    ingredients: [
+                        {title: "beet", amount: 3},
+                        {title: "potatoes", amount: 5},
+                        {title: "carrot", amount: 1},
+                    ]
+                }
+            },
+            {
+                name: "Jennifer",
+                age: 78,
+                favoriteDish: {
+                    title: "sushi",
+                    ingredients: [
+                        {title: "fish", amount: 1},
+                        {title: "rise", amount: 0.5}
+                    ]
+                }
+            },
+        ]
+    }
+};
+
+let man7FullCopy = {...man7, mother: {...man7.mother, parents: man7.mother.parents
+            .map((p) =>p.name ="Kevin" ? {...p, favoriteDish: {...p.favoriteDish, ingredients:
+                        {...p.favoriteDish.ingredients.map((i)=> i.title = "carrot"
+                                ? { ...i, title: "eggs"}: i)}}}: p)}}
+
+console.log(man7FullCopy.mother.parents[0].favoriteDish.ingredients[2])
