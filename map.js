@@ -48,7 +48,7 @@ function greet(language) {
 
 
 function greet(language) {
-    array.filter(item => item.language === language ? console.log(item.congratulation): item);
+    array.filter(item => item.language === language ? console.log(item.congratulation): "Welcome");
 }*/
 
 greet("IP_ADDRESS_INVALID")
